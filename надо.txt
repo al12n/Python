@@ -1,0 +1,21 @@
+<table>
+			<tr>
+				<td>Строка 1 ячейка 1</td>
+				<td>Строка 1 ячейка 2</td>
+				<td>Строка 1 ячейка 3</td>
+			</tr>
+			<tr>
+				<td>Строка 2 ячейка 1</td>
+				<td>Строка 2 ячейка 2</td>
+				<td>Строка 2 ячейка 3</td>
+			</tr>
+		</table>
+		<form action='processingscript.php' method='post'>
+   			<label for="username">Username:</label>
+   			<input type="text" id="username" name="username" required>
+
+   			<label for="password">Password:</label>
+   			<input type="password" id="password" name="password" required>
+
+   			<button type="submit">Submit</button>
+		</form>

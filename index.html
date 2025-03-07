@@ -1,0 +1,113 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Просто веб-страница</title>
+	<style>
+		body {
+			background-color: #add8e6;
+			font-family: Arial, sans-serif;
+			color: #333;
+			margin: 0;
+			padding: 20px;
+		}
+
+		h1 {
+			color: #2a5d84;
+		}
+
+		#chat-box {
+			background-color: #f0f8ff;
+			border: 2px solid #2a5d84;
+			border-radius: 8px;
+			padding: 10px;
+			width: 300px;
+			height: 200px;
+			overflow-y: scroll;
+			margin-bottom: 10px;
+		}
+
+		#message-input {
+			width: 200px;
+			padding: 5px;
+		}
+
+		#send-btn {
+			padding: 5px 10px;
+			background-color: #2a5d84;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Учебник по питон</h1>
+
+	<h2>💬 Оставь сообщение:</h2>
+	<div id="chat-box"></div>
+	<input type="text" id="message-input" placeholder="Напиши что-то...">
+	<button id="send-btn">Отправить</button>
+
+	<script>
+		const chatBox = document.getElementById('chat-box');
+		const messageInput = document.getElementById('message-input');
+		const sendBtn = document.getElementById('send-btn');
+
+		sendBtn.addEventListener('click', () => {
+			const message = messageInput.value.trim();
+
+			if (message !== '') {
+				const messageElement = document.createElement('p');
+				messageElement.textContent = message;
+				chatBox.appendChild(messageElement);
+				messageInput.value = '';
+				chatBox.scrollTop = chatBox.scrollHeight;
+			}
+		});
+
+		messageInput.addEventListener('keypress', (e) => {
+			if (e.key === 'Enter') {
+				sendBtn.click();
+			}
+		});
+	</script>
+
+	<p>Python — это очень востребованный язык программирования, и на нём делай что хочешь, например:</p>
+	<ul>
+		<li>Нейросети</li>
+		<li>Игры</li>
+		<li>Простые веб-страницы</li>
+	</ul>
+	
+	<h2>Глава 1. Переменные</h2>
+	<pre><code>variable = 1</code></pre>
+	<pre><code>variable = "Hello"</code></pre>
+
+	<h2>Глава 2. print()</h2>
+	<pre><code>name = "Denis"
+print(name)</code></pre>
+	<pre><code>print("Hello world")</code></pre>
+	<pre><code>name = input("What is your name?")
+print(name)</code></pre>
+
+	<h2>Глава 3. Функции</h2>
+	<pre><code>def greet():
+	print("Hello")</code></pre>
+
+	<h2>Глава 4. Списки и кортежи</h2>
+	<pre><code>my_list = [1, 2, 3, 4, 5]</code></pre>
+	<pre><code>my_tuple = (1, 2, 3, 4, 5)</code></pre>
+
+	<h2>Глава 5. Словари</h2>
+	<pre><code>my_dict = {"name": "Denis", "age": 12}</code></pre>
+
+	<h2>Глава 6. ООП</h2>
+	<pre><code>class Person:
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+
+person = Person("Denis", 12)</code></pre>
+</body>
+</html>
